@@ -1,5 +1,5 @@
 {
-  "name": "mihalik/react-storybook-addon-docgen",
+  "name": "react-storybook-addon-docgen",
   "version": "3.3.0",
   "description": "A React Storybook addon to display docgen information.",
   "repository": {
@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
-    "storybook": "start-storybook -p 9010",
+    "storybook": "start-storybook -p 9010"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.20.1",
@@ -23,7 +23,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
     "react": "^15.3.2",
-    "react-dom": "^0.14.7 || ^15.0.0",
+    "react-dom": "^0.14.7 || ^15.0.0"
   },
   "peerDependencies": {
     "react": "^0.14.7 || ^15.0.0"
@@ -31,7 +31,7 @@
   "dependencies": {
     "babel-runtime": "^6.5.0",
     "github-markdown-css": "^2.4.1",
-    "marked": "^0.3.6",
+    "marked": "^0.3.6"
   },
   "main": "dist/index.js",
   "engines": {

@@ -17,7 +17,6 @@ export default class DocPanel extends React.Component {
   constructor(props) {
     super(props);
     this.props.channel.on('story-change', (docgen) => {
-      console.log(docgen);
       this.setState({docgen});
     });
   }

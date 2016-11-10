@@ -7,7 +7,7 @@ import ButtonDocs from './ButtonDocs';
 import ButtonSimple from './ButtonSimple';
 
 storiesOf('ButtonDocs')
-  .addDecorator(docs({}))
+  .addDecorator(docs())
   .add(
     'simple usage',
     () => <ButtonDocs label="The Button" onClick={action('onClick')} />,
@@ -18,14 +18,14 @@ storiesOf('ButtonDocs')
   );
 
 storiesOf('Button')
-  .addDecorator(docs({}))
+  .addDecorator(docs())
   .add(
     'simple usage',
     () => <Button label="The Button" onClick={action('onClick')} />,
   );
 
 storiesOf('ButtonSimple')
-  .addDecorator(docs({}))
+  .addDecorator(docs())
   .add(
     'simple usage',
     () => <ButtonSimple label="The Button" onClick={action('onClick')} />,

@@ -1,3 +1,5 @@
+**NOTE: This module is under active development**
+
 # React Storybook Docgen Addon
 
 A React Storybook addon to show documentation generated with docgen.
@@ -6,10 +8,11 @@ A React Storybook addon to show documentation generated with docgen.
 
 ## Usage
 
-Install the following npm module:
+Install the following module:
+**NOTE: This module will move to NPM once API has stabilized**
 
 ```sh
-npm i -D @kadira/react-storybook-addon-info
+npm i -D mihalik/react-storybook-addon-docgen
 ```
 
 Create an `addons.js` file within your storybook config directory:
@@ -24,7 +27,7 @@ Then add a decorator to your stories.
 
 ```js
 storiesOf('ButtonSimple')
-  .addDecorator(docs({}))
+  .addDecorator(docs())
   .add(
     'simple usage',
     () => <ButtonSimple label="The Button" onClick={action('onClick')} />,

@@ -1,5 +1,10 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.EVENT_ID = undefined;
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -16,6 +21,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ADDON_ID = 'storybook-addon-docgen';
 var PANEL_ID = ADDON_ID + '/doc-panel';
+var EVENT_ID = exports.EVENT_ID = ADDON_ID + '/doc-panel-event';
 
 _storybookAddons2.default.register(ADDON_ID, function (api) {
   var channel = _storybookAddons2.default.getChannel();

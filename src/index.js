@@ -1,23 +1,11 @@
 import React from 'react';
 import addons from "@kadira/storybook-addons";
+import {EVENT_ID} from './register';
 
-export class DocDecorator extends React.Component {
+export default (fn) => {
+  let story = fn();
 
-  componentWillMount() {
-    this.props.channel.emit('story-change', this.props.story().type.__docgenInfo);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.story !== this.props.story) {
-      this.props.channel.emit('story-change', nextProps.story().type.__docgenInfo);
-    }
-  }
-
-  render() {
-    return this.props.story();
-  }
+  const channel = addons.getChannel();
+  channel.emit(EVENT_ID, {docgen: story.type.__docgenInfo});
+  return fn();
 }
-
-export default (readme) => (story) => (
-  <DocDecorator story={story} readme={readme} channel={addons.getChannel()} />
-);

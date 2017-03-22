@@ -36,6 +36,16 @@ storiesOf('ButtonSimple')
 
 > Have a look at [this example](example/story.js) stories to see the example usage.
 
+## React native storybook
+If you are using react native storybook and this addon doesn't work for you, it means that your .babelrc file is missing plugin.
+```
+"plugins": [
+    ["react-docgen", { "DOC_GEN_COLLECTION_NAME": "STORYBOOK_REACT_CLASSES"}]
+  ]
+```
+
+Also add `global.STORYBOOK_REACT_CLASSES = {};` somewhere in begging of your code
+
 ## The FAQ
 
 **My component name is `undefined` or props are not displaying**

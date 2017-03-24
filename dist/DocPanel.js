@@ -38,7 +38,7 @@ var _generateMarkdown = require('./components/generateMarkdown');
 
 var _generateMarkdown2 = _interopRequireDefault(_generateMarkdown);
 
-var _register = require('./register');
+var _constants = require('./constants');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -69,12 +69,12 @@ var DocPanel = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
 
-      this.props.channel.on(_register.EVENT_ID, this._listener);
+      this.props.channel.on(_constants.EVENT_ID, this._listener);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.props.channel.removeListener(_register.EVENT_ID, this._listener);
+      this.props.channel.removeListener(_constants.EVENT_ID, this._listener);
     }
   }, {
     key: 'render',

@@ -4,7 +4,7 @@ import '!style!css!github-markdown-css/github-markdown.css';
 
 import generateMarkdown from './components/generateMarkdown';
 
-import {EVENT_ID} from './register';
+import {EVENT_ID} from './constants';
 
 const styles = {
   base: {

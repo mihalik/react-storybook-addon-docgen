@@ -1,6 +1,6 @@
 import React from 'react';
 import addons from "@kadira/storybook-addons";
-import {EVENT_ID} from './register';
+import {EVENT_ID} from './constants';
 
 export default (fn) => {
   let story = fn();

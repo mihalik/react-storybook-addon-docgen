@@ -12,6 +12,12 @@
  */
 "use strict";
 
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function generateTitle(name) {
   var title = '`' + name + '`';
   return title + '\n===\n';
@@ -47,7 +53,7 @@ function generateProps(props) {
   if (!props) {
     return title;
   }
-  return title + Object.keys(props).sort().map(function (propName) {
+  return title + (0, _keys2.default)(props).sort().map(function (propName) {
     return generateProp(propName, props[propName]);
   }).join('\n');
 }

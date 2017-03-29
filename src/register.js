@@ -3,8 +3,7 @@ import addons from '@kadira/storybook-addons';
 
 import DocPanel from './DocPanel';
 
-const ADDON_ID = 'storybook-addon-docgen';
-const PANEL_ID = `${ADDON_ID}/doc-panel`;
+import {ADDON_ID, PANEL_ID} from './constants';
 
 addons.register(ADDON_ID, (api) => {
   const channel = addons.getChannel();

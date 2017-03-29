@@ -4,22 +4,34 @@ import '!style!css!github-markdown-css/github-markdown.css';
 
 import generateMarkdown from './components/generateMarkdown';
 
+import {EVENT_ID} from './constants';
+
 const styles = {
   base: {
     boxSizing: 'border-box',
-    maxWidth: 980,
-    padding: 45,
   },
 };
 
 export default class DocPanel extends React.Component {
+
   state = {docgen: null};
   constructor(props) {
     super(props);
-    this.props.channel.on('story-change', (docgen) => {
-      this.setState({docgen});
-    });
+
+    this._listener = d => {
+      this.setState({docgen: d.docgen})
+    };
   }
+
+  componentDidMount() {
+    
+    this.props.channel.on(EVENT_ID, this._listener);
+  }
+
+  componentWillUnmount() {
+    this.props.channel.removeListener(EVENT_ID, this._listener);
+  }
+
   render () {
     const {docgen} = this.state;
     if (!docgen) {

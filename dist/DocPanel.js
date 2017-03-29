@@ -38,13 +38,13 @@ var _generateMarkdown = require('./components/generateMarkdown');
 
 var _generateMarkdown2 = _interopRequireDefault(_generateMarkdown);
 
+var _constants = require('./constants');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = {
   base: {
-    boxSizing: 'border-box',
-    maxWidth: 980,
-    padding: 45
+    boxSizing: 'border-box'
   }
 };
 
@@ -58,13 +58,25 @@ var DocPanel = function (_React$Component) {
 
     _this.state = { docgen: null };
 
-    _this.props.channel.on('story-change', function (docgen) {
-      _this.setState({ docgen: docgen });
-    });
+
+    _this._listener = function (d) {
+      _this.setState({ docgen: d.docgen });
+    };
     return _this;
   }
 
   (0, _createClass3.default)(DocPanel, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+
+      this.props.channel.on(_constants.EVENT_ID, this._listener);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.channel.removeListener(_constants.EVENT_ID, this._listener);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var docgen = this.state.docgen;

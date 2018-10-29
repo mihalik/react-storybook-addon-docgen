@@ -1,4 +1,4 @@
-**NOTE: This module is under active development**
+**NOTE: This module is NOT under active development.**  Check out [this fork](https://github.com/gongreg/react-storybook-addon-docgen) for a version that is being actively updated.
 
 # React Storybook Docgen Addon
 
